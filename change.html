@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+		<address>
+		  <strong>名字：{{data.name}}</strong><br>
+		  <p>密码：{{data.password}}</p>
+		  新密码:<input ng-model="newpas" type="text" />
+		   <button ng-click="datachag()" class="btn btn-default">修改</button>
+		</address>
+	</body>
+</html>

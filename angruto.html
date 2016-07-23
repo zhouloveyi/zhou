@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.js"></script>
+		<script src="js/angular-route.js"></script>
+	</head>
+	<body ng-app='zhou' ng-controller="homeCtrl">
+		<div ng-view=""></div>
+	</body>
+	<script>
+		var app=angular.module("zhou",['ngRoute']);
+		app.config(function($routeProvider){
+			$routeProvider.when('/home',{
+				controller:'homeCtrl',
+				templateUrl:'home.html'
+			}).when('/del/:number',{
+				controller:'delCtrl',
+				templateUrl:'del.html'
+			}).when('/add',{
+				controller:'addCtrl',
+				templateUrl:'add.html'
+			}).when('/change/:number',{
+				controller:'changeCtrl',
+				templateUrl:'change.html'
+			})
+		});
+		app.controller('homeCtrl',['$scope','$rootScope',function($scope,$rootScope){
+			$scope.name=123;
+			$scope.data=data;
+		}])
+		app.controller('delCtrl',['$scope','$rootScope','$routeParams',function($scope,$rootScope,$routeParams){
+			$scope.data=data[$routeParams.number];
+			console.log(data);
+			$scope.datadel=function(){
+				data.splice($routeParams.number,1);
+				window.location.href=('#/home');
+			}
+		}])
+		app.controller('addCtrl',['$scope','$rootScope',function($scope,$rootScope){
+			$scope.zhouname;
+			$scope.zhoupass;
+			$scope.submitdata=function(){
+				var obj={};
+				obj.id=data.length;
+				obj.name=$scope.zhouname;
+				obj.password=$scope.zhoupass;
+				data.push(
+					obj
+				);
+				window.location.href=('#/home');
+			}
+		}])
+		app.controller('changeCtrl',['$scope','$routeParams','$location',function($scope,$routeParams,$location){
+			
+			$scope.data=data[$routeParams.number];
+			
+			$scope.datachag=function(){
+				data[$routeParams.number].password=$scope.newpas;
+				$location.path('del/'+$routeParams.number);
+			}
+		}])
+		app.directive('zhoudrect',['$scope',function($scope){
+			
+		}])
+	</script>
+	<script>
+		var data=[{
+			id:0,
+			name:'zhou',
+			password:'123'
+		},{
+			id:1,
+			name:'kao',
+			password:'234'
+		},{
+			id:2,
+			name:'mei',
+			password:'456'
+		}]
+	</script>
+</html>

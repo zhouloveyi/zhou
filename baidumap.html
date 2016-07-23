@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style>
+			#zhoumap{
+				width:500px;
+				height:500px;
+			}
+		</style>
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=b8awkqkiTZ94X2aTRpULCfBDTju4NQST"></script>
+	</head>
+	<body>
+		<div id="zhoumap"></div>
+	</body>
+	<script>
+	function baidumap(){
+		var map=new BMap.Map('zhoumap');
+		var point=new BMap.Point(113.335,23.178)
+		map.centerAndZoom(point,15);
+	}
+		baidumap();
+		
+	</script>
+</html>

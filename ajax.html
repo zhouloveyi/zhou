@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+	</head>
+	<body>
+		<section id="box"></section>
+	</body>
+	<script>
+	var nbox=document.getElementById("box");
+	
+		var xmlHttp;
+		if(window.XMLHttpRequest){
+			xmlHttp=new XMLHttpRequest();
+		}else{
+			xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlHttp.open("GET","sql.text",true);
+		xmlHttp.send();
+		xmlHttp.onreadystatechange=function(){
+			if(xmlHttp.readyState==4 && xmlHttp.status==200){
+				nbox.innerHTML=xmlHttp.responseText;
+			}
+		}
+		console.log(nbox);
+	</script>
+</html>

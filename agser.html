@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body ng-app="anguzhou" >
+		<section ng-controller="zhouCtrl">
+			<p>{{text}}</p>
+			<p>{{name}}</p>
+			<input type="text" ng-model="name">
+			<input type="submit" ng-click="submit()" />
+		</section>
+	</body>
+	<script>
+		var app=angular.module('anguzhou',[]);
+		app.controller('zhouCtrl',['$scope','$http','zhou',function($scope,$http,zhou){
+			$scope.text="123";
+			$scope.name='1';
+			console.log(zhou);
+			$scope.submit=function(){
+				console.log($scope.name);
+				$http.get('http://1.wsscatapi.applinzi.com/?format='+$scope.name).success(function(e){
+				console.log(e);
+				$scope.name=e;
+			});
+			}
+			
+		}]);
+		app.service('zhou',[function(){
+				var obj={};
+				
+			}]);
+	</script>
+</html>

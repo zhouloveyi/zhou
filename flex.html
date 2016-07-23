@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>灵活布局</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<style>
+		
+			#content{
+				width:500px;
+				height:200px;
+				display: flex;
+				border:solid 5px #e5e5e5;
+				/*flex-flow: row wrap ;*/
+				justify-content: space-around;
+			}
+			#content1{
+				background-color: #f00;
+				/*order:3;*/
+				/*flex:1;*/
+			}
+			#content2{
+				background-color: #0f0;
+				/*flex:2;*/
+			}
+			#content3{
+				background-color: #00f;
+				/*flex:3;*/
+			}
+			#content1,#content2,#content3{
+				width:150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<div id="content1">1</div>
+			<div id="content2">2</div>
+			<div id="content3">3</div>
+		</div>
+	</body>
+</html>

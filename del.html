@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+		<address>
+		  <strong>名字：{{data.name}}</strong><br>
+		  <p>旧密码：{{data.password}}</p>
+		   <button ng-click="datadel()" class="btn btn-default">删除</button>
+		   <button class="btn btn-default"><a ng-href="#/change/{{data.id}}" >修改</a></button>
+		</address>
+	</body>
+</html>

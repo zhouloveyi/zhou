@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>音频和视频</title>
+<script src="jquery-1.12.0.js"></script>
+<style>
+*{margin:0;padding:0}
+</style>
+</head>
+
+<body>
+<video preload="metadata" id="videoone" width="500" height="300">
+	<source  src="video/3theA.mp4" type="video/mp4">
+</video>
+<img id="play" src="img/pause.png"></img>
+<img id="vol" src="img/vol.png"></img>
+<input type="range" max=1 min=0 step=0.1 id="setvol">
+<button id="screen">全屏</button>
+</body>
+<script type="text/javascript">
+	jQuery(function($){
+		var $play=$("#play");
+		var $vol=$("#vol");
+		var $scr=$("#screen");
+		var setvol=document.getElementById("setvol");
+		var video=document.getElementById("videoone");
+		var isplay=true;
+		var isvol=true;
+		var isfull=true;
+		$play.on('click',function(){
+			if(isplay){
+				video.play();
+				isplay=false;
+				$(this).attr("src","img/play.png");
+			}else{
+				video.pause();
+				$(this).attr("src","img/pause.png");
+				isplay=true;
+			}
+		});
+		$vol.on('click',function(){
+			if(isvol){
+			video.muted=true;
+			$(this).attr("src","img/novol.png")
+			isvol=false;
+			}else{
+			video.muted=false;
+			$(this).attr("src","img/vol.png")
+			isvol=true;	
+			}
+		});
+		setvol.onchange=function(){
+			video.volume=this.value;
+		}
+		$scr.on("click",function(){
+			if(isfull){
+				video.webkitRequestFullScreen();
+				isfull=false;
+			}else{
+				document.webkitCancelFullScreen();
+				isfull=true;
+			}
+		})
+	});
+</script>
+</html>

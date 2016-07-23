@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		function Getlocation(){
+			if(navigator.geolocation){
+				navigator.geolocation.getCurrentPosition(
+					function successCallback(position){
+						console.log(position);
+					},
+					function errorCallback(error){
+						console.log(error);
+					}
+				);
+			}
+		}
+		Getlocation();
+	</script>
+</html>

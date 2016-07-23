@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width:200px;
+				height:200px;
+				margin: 50px;
+				background-color: #00FF00;
+				border:10px dashed #FF0000;
+				-webkit-background-clip: border;
+				background-clip: border;
+			}
+			#box1{
+				width:200px;
+				height:200px;
+				margin: 50px;
+				background-color: #00FF00;
+				border:10px dashed #FF0000;
+				-webkit-background-clip: content;
+				background-clip: content;
+			}
+			#box2{
+				width:200px;
+				height:200px;
+				margin: 50px;
+				border:5px solid skyblue;
+				border-radius: 40px 40px;
+				/*//放射渐变*/
+				background-image: radial-gradient(circle 130px at 130px 50px,orange 10%,black 20%,red 50%,yellow 20%);
+			}
+			#box3{
+				width:200px;
+				height:200px;
+				margin:50px;
+				border:none;
+				border-radius: 20px;
+				padding:20px;
+				background: linear-gradient(to right,black 10%,orange 10%,blue 20%,green 60%);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			123
+		</div>
+		<div id="box1">
+			123
+		</div>
+		<div id="box2">
+			123
+		</div>
+		<div id="box3">
+			123
+		</div>
+	</body>
+</html>

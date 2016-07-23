@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.js"></script>
+		<style>
+			#email.ng-valid{
+				background:#00FF00;
+			}
+			#email.ng-invalid{
+				background:#FF0000;
+			}
+		</style>
+	</head>
+	<body>
+		<div ng-app="" ng-init="price=1;number=3">
+			<p>请输入一个值</p>
+			<p>价格：<input type="text" ng-model="price"></p>
+			<p>数量：<input type="text" ng-model="number"></p>
+			<p>总价{{price*number|currency}}</p>
+			<div ng-init="names=[
+				{name:'zhou',country:'Norway'},
+				{name:'Hege',country:'Sweden'},
+				{name:'Kai',country:'Denmark'}]">
+
+				<p>循环对象：</p>
+					<ul>
+  						<li ng-repeat="x in names">
+    						{{ x.name + ', ' + x.country }}
+  						</li>
+					</ul>
+				</p>
+			</div>
+			<form name="zhouForm">
+				邮箱：<input id="email" type="email" name="zhouEmail" ng-model="text"/>
+				<span ng-show="zhouForm.zhouEmail.$error.email">输入错误</span>
+			</form>
+			
+		</div>
+
+		
+	</body>
+
+</html>

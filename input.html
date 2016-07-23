@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>input元素</title>
+<script>
+	//document.getElementById('date').valueAsDate=new Date();
+	function value_change(){
+		var number=document.getElementById('range1').value;
+		document.getElementById('output1').value=number;
+	}
+	function email_check(){
+		var email=document.getElementById("email");
+		if(email.value==''){
+			alert("请输入Email地址");
+			return false;
+		}else if(!email.checkValidity()){
+			alert("请输入正确的Email地址");
+			return false;
+		}else{
+			alert("正确");
+		}
+	}
+</script>
+</head>
+
+<body>
+	<form id="box" onsubmit="return email_check();" novalidate="true">
+    	<label>搜索框</label><input type="search"><br/>
+        <label>电话</label><input type="tel"><br/>
+        <label>url</label><input type="url"><br/>
+        <label>email</label><input type="email" id="email"><br/>
+        <label>number</label><input type="number"><br/>
+        <label>range</label><input type="range" id="range1" min="10" max="100" onchange="value_change()">
+        <output id="output1" form="box"></output><br/>
+        <label>color</label><input type="color"><br/>
+        <label>日历</label><input type="date" id="date" min="2016-7-4" max="2016-7-11" formnovalidate="formnovalidate"><br/>
+        <label>时间</label><input type="time"><br/>
+        <label>当地时间</label><input type="datetime-local"><br/>
+        <!----<input type="button" value="点击提交" onclick="alert(document.getElementById('date').valueAsNumber)"><br/>---->
+		<input type="submit" value="提交">
+	</form>
+    
+</body>
+</html>

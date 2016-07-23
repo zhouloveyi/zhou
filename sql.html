@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简易数据库交互</title>
+	</head>
+	<body>
+		<header>
+			<h1>利用web storage做简易数据库</h1>
+		</header>
+		<section>
+			<form>
+				<label>用户名</label><input id="name" type="text" placeholder="用户名"/><br />
+				<label>密码</label><input id="password" type="password" placeholder="输入密码"/><br />
+				<label>email</label><input id="email" type="email"/ placeholder="@email.com"><br />
+				<button onclick="saveStorage()">提交</button>
+				
+			</form>
+			<label>搜索</label><input type="search" id="find"/><button onclick="findStorage('show')">查看</button>
+			<p id="show"></p>
+		</section>
+	</body>
+	<script>
+		function saveStorage(){
+			var data=new Object;
+			data.name=document.getElementById('name').value;
+			data.passw=document.getElementById('password').value;
+			data.email=document.getElementById('email').value;
+			var str=JSON.stringify(data);
+			localStorage.setItem(data.name,str);
+			alert("数据已保存");
+		}
+		function findStorage(id){
+			var find=document.getElementById('find').value;
+			var str=localStorage.getItem(find);
+			var data=JSON.parse(str);
+			var result='<p>'+"用户名:"+data.name+'</p>';
+			result+='<p>'+"密码:"+data.passw+'</p>';
+			result+='<p>'+"邮箱:"+data.email+'</p>';
+			var target=document.getElementById(id);
+			console.log(target);
+			target.innerHTML=result;
+		}
+	</script>
+</html>

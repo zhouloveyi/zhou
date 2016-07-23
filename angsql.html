@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<script src="js/angular.js"></script>
+	</head>
+	<body>
+		<ul ng-app="anguzhou" ng-controller="mes">
+			<li ng-repeat="x in names"><strong>姓名：{{x.name}}</strong>密码：{{x.password}}</li>
+		</ul>
+	</body>
+	<script>
+		var app=angular.module('anguzhou',[]);
+		app.controller('mes',['$scope','$http',function($scope,$http){
+			
+			$http.get("http://127.0.0.1:8020/projects/sql.php").success(function(response){
+				$scope.names=response.sql;
+			});
+		}]);
+	</script>
+</html>

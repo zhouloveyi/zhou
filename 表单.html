@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表单</title>
+<style>
+	box{width:50px;height:50px;border-radius:50px;border:2px solid #000}
+</style>
+</head>
+
+<body>
+	<form id="box">
+    	<label>用户名</label><input type="text" autofocus required pattern="[0-9]{5}" title="你看看你输入的什么">
+        <input type="image" src="2.jpg" width="50px" height="50px" formtarget="_blank" formaction="video.html" formmethod="post" />
+        <label>数据</label><input type="text" placeholder="请搜索" required >
+        <button formtarget="_self" formaction="存储时数据.html" formmethod="get">储存数据</button>
+        <label>兴趣</label><input type="text" list="hobbit" required autocomplete="on">
+        <datalist id="hobbit" style="display:none">
+        	<option>电脑</option>
+            <option>玩游戏</option>
+            <option>去泡妞</option>
+        </datalist>
+        <button>3</button>
+    </form>
+    <label>多行文本</label><textarea form="box" maxlength=10 rows=2 wrap="hard"></textarea>
+</body>
+</html>

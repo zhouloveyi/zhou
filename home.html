@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+	</head>
+	<body>
+		<p>这是home页面</p>
+		<a href="#/index">跳转至index</a>
+		
+		<table class="table table-striped">
+			<tr>
+				<th>序号</th>
+				<th>名字</th>
+				<th>密码</th>
+			</tr>
+			<tr ng-repeat="x in data">
+				<th>{{x.id}}</th>
+				<th><a ng-href="#/del/{{x.id}}">{{x.name}}</a></th>
+				<th>{{x.password}}</th>
+			</tr>
+		</table>
+		<a href="#/add"><button type="button" class="btn btn-primary">新增</button></a>
+	</body>
+</html>
