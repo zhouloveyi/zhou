@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+.shopcar{width:100%;height:auto;}
+.shopcarin{width:990px;margin: 20px auto}
+.shopcartop{height:37px;margin-bottom:15px;background:#f5f5f5}
+.shopcartop th{padding:10px 0;font-weight:bold}
+.shopcarcont{}
+.shopimg{width:380px;height:110px;margin-left:50px}
+.shopimg a{display:inline-block;width:100px;height:100px;border:1px solid #f5f5f5}
+.shopimg p{display:inline-block;width:250px;}
+.shopimg a img{width:100%;height:100%}
+.subtotal,.price{font-size: 18px;
+    font-family: 'fonten';
+    color: #000;margin-left:35px}
+.amount{border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    width: 108px;
+    float: left;
+    text-align: center;
+    line-height: 28px;
+    height: 28px;}
+.amount button{    display: inline-block;
+    float: left;
+    width: 29px;
+    height: 28px;
+    color: #686868;
+    font-size: 20px;cursor:pointer;}
+.amount input{    width: 48px;
+    height: 28px;
+    line-height: 28px;
+    font-family: 'fonten';
+    font-size: 14px;
+    border: 0;
+    padding: 0;
+    float: left;
+    background: none;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #eee;}
+.subtotal{color: #e10482;}
+.btndel{width: 20px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    text-indent: -999em;
+    overflow: hidden;
+	background:url(img/cart_sprite.png) no-repeat -60px -153px;
+	}
+.cartotal{height:60px;width:100%}
+.keepshop{display:inline-block;font-size:18px;color:#000;margin-top:20px}
+.total_price{font-size: 30px;
+    font-family: 'fonten';
+    display: inline-block;color: #e10482;margin-right:50px}
+.btnclear{text-align: center;background:url(img/btn.png) no-repeat;
+	background-position:left -51px;
+    line-height: 50px;
+    font-size: 18px;padding-left: 25px;height:50px;display:inline-block}
+.btnclear span{width:120px;height:50px;
+	background: url(img/btn.png) no-repeat; 
+	background-position:right 0px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;padding-right: 25px;
+    color: #fff;height: 50px;
+    line-height: 50px;
+    font-size: 18px;}

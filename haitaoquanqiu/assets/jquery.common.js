@@ -1,0 +1,51 @@
+// JavaScript Document
+$(function(){
+	(function(){
+			//边栏导航
+			$user=$('#user');
+			$serhover=$('.serhover');
+			$user.on('mouseenter','.serone',function(){
+				$serhover.css({display:'block'}).animate({opacity:1,right:30+'px'})
+			}).on('mouseleave','.ser',function(){
+				$serhover.animate({opacity:0,right:60+'px'}).css({display:'none'})
+			});
+			$colhover=$('.colhover');
+			$user.on('mouseenter','.collect',function(){
+				$colhover.css({display:'block'}).animate({opacity:1,right:30+'px'})
+			}).on('mouseleave','.collect',function(){
+				$colhover.animate({opacity:0,right:60+'px'}).css({display:'none'})
+			});
+			$favhover=$('.favhover');
+			$user.on('mouseenter','.fav',function(){
+				$favhover.css({display:'block'}).animate({opacity:1,right:30+'px'})
+			}).on('mouseleave','.fav',function(){
+				$favhover.animate({opacity:0,right:60+'px'}).css({display:'none'})
+			});
+			$codehover=$('.codehover');
+			$user.on('mouseenter','.code',function(){
+				$codehover.css({display:'block'}).animate({opacity:1,right:50+'px'})
+			}).on('mouseleave','.code',function(){
+				$codehover.animate({opacity:0,right:80+'px'}).css({display:'none'})
+			});
+			//中间导航条
+			$navbtn=$('.sortbtn');
+			$navbtn.on('click',function(){
+				$menu=$('.menu');
+				if($navbtn.html()=='收起分类'){
+					$navbtn.empty().html('显示分类');
+					$menu.css({display:'none'});
+				}else{
+					$navbtn.empty().html('收起分类');
+					$menu.css({display:'block'});
+					$menul=$('.menul');
+					$menur=$('.menur');
+					$menur.find('ul').eq(0).css({display:'block'}).siblings().css({display:'none'})
+					$menul.find('li').hover(function(){
+						nindex=$(this).index();
+						$menur.find('ul').eq(nindex).css({display:'block'}).siblings().css({display:'none'})
+					},function(){})
+				}
+				
+			});
+	})()
+});

@@ -1,0 +1,904 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>嗨淘全球</title>
+<style type="text/css">
+@import url(css/header-footer.css);
+@import url(css/font.css);
+@import url(css/index.css);
+</style>
+<script src="assets/jquery-1.12.0.js"></script>
+<script src="assets/jquery.lunbo.js"></script>
+<script src="assets/jquery.common.js"></script>
+<script>
+jQuery(function($){
+			//轮播图
+            $('.focus').lunbo({showSmall:true,showButton:true});
+			
+			//鼠标放置后y轴移动12px
+			//function addmovey(){}
+			$layin=$('.layin');
+			$layin.find('a').hover(function(){
+				lindex=$(this).index();
+				$(this).addClass('movey')
+				},function(){
+				$(this).removeClass('movey')	
+				})
+			$conl=$('.con-left');
+			$conl.hover(function(){
+				$(this).addClass('movey')
+				},function(){
+				$(this).removeClass('movey')	
+				})
+			$conr=$('.conr');
+			$conr.find('li').hover(function(){
+				cindex=$(this).index();
+				$(this).addClass('movey')
+				},function(){
+				$(this).removeClass('movey')	
+				})
+			$mainrbox=$('.mainrbox');
+			$mainrbox.find('a').hover(function(){
+				$(this).find('div').css({display:'block'})
+				$(this).css({
+					'border':'solid 1px #ddd',
+					'width':'118px',
+					'height':'118px'
+				})
+			},function(){
+				$(this).find('div').css({display:'none'})
+				$(this).css({
+					'border':'0',
+					'width':'120px',
+					'height':'120px'
+				})
+				});
+			
+			//设置倒计时
+			timer = setInterval(show_time,1000);
+							function show_time(){ 
+						
+						var time_start = new Date().getTime(); //设定当前时间
+						var time_end =  new Date("2016/8/01 00:00:00").getTime(); //设定目标时间
+						// 计算时间差 
+						var time_distance = time_end - time_start; 
+						// 天
+						var int_day = Math.floor(time_distance/86400000) 
+						time_distance -= int_day * 86400000; 
+						// 时
+						var int_hour = Math.floor(time_distance/3600000) 
+						time_distance -= int_hour * 3600000; 
+						// 分
+						var int_minute = Math.floor(time_distance/60000) 
+						time_distance -= int_minute * 60000; 
+						// 秒 
+						var int_second = Math.floor(time_distance/1000) 
+						// 时分秒为单数时、前面加零 
+						if(int_day < 10){ 
+							int_day = "0" + int_day; 
+						} 
+						if(int_hour < 10){ 
+							int_hour = "0" + int_hour; 
+						} 
+						if(int_minute < 10){ 
+							int_minute = "0" + int_minute; 
+						} 
+						if(int_second < 10){
+							int_second = "0" + int_second; 
+						} 
+						// 显示时间 
+						$(".time_d").val(int_day);
+						$(".time_h").val(int_hour); 
+						$(".time_m").val(int_minute); 
+						$(".time_s").val(int_second); 
+						
+					}
+							
+		//$("img").lazyload({ threshold : 200 });
+			$mainli=$('.mainli');
+			$mainul=$('.mainlscroll');
+			for(j=0;j<10;j++){
+				$mainlicopy=$mainli.clone(true,true);
+
+				$mainlicopy.appendTo($mainul);
+				
+				}
+
+});
+</script>
+</head>
+
+<body>
+<!--------顶部-------->
+<div id="header">
+    <div class="h-top">
+    	<div class="h-topin">
+        	<div class="htl-menu left">
+        		<a href="html/register.html">登录</a><a href="html/login.html">免费注册</a>
+        	</div>
+        	<div class="htr-menu right">
+        		<a href="#">我的订单</a>|<a href="#">我的优惠券</a>|<a href="#">我的收藏</a>|<a href="#">帮助中心</a>
+            </div>
+        </div>
+    </div>
+    <div class="h-mid">
+    <h1 class="left"><a href="index.html" target="_blank"><img src="img/TB1jCLDKpXXXXa_XXXX4dpbJFXX-241-71.png"/></a></h1>
+    <div class="left imgone"><img src="css/img/TB1dPWzLpXXXXaLaXXX.W3sIXXX-220-26.png"/></div>
+    <div class="search right">
+    	<form class="seainput">
+        	<input class="seatext" type="text" placeholder="请输入搜索内容"/>
+            <button class="seabtn right">搜索</button>
+        </form>
+        <div class="seabox">
+        	<a href="#">面霜</a>|<a href="#">面膜</a>|<a href="#">护肤平</a>|<a href="#">洁面奶</a>|<a href="#">宝宝营养</a>|<a href="#">面霜</a>|<a href="#">面霜</a>|<a href="#">面霜</a>
+        </div>
+    </div>
+    </div>
+</div>
+<!-------导航条--------->
+<div id="nav">
+	<ul class="navone">
+    	<li><a href="index.html" target="_self">首页</a></li>
+        <li><a href="#">全球特卖</a></li>
+        <li><a href="#">母婴馆</a></li>
+        <li><a href="#">韩流馆</a></li>
+        <li><a href="#">欧美馆</a></li>
+    </ul>
+    <div class="right sortbtn">查看分类</div>
+    <div class="menu">
+      <ul class="menul left">
+      <li class="tab0"><a href="http://hitao.top/category_122.html"><i class="iconfont icon-mianmo"></i>面部护理</a></li>
+      <li class="tab1"><a href="http://hitao.top/category_376.html"><i class="iconfont icon-gehu"></i>个人护理</a></li>
+      <li class="tab2"><a href="http://hitao.top/category_125.html"><i class="iconfont icon-kouhong"></i>时尚彩妆</a></li>
+      <li class="tab3"><a href="http://hitao.top/category_521.html"><i class="iconfont icon-xiangshui"></i>香氛/精油</a></li>
+      <li class="tab4"><a href="http://hitao.top/category_443.html"><i class="iconfont icon-naifenchaoshi"></i>婴幼儿</a></li>
+      <li class="tab5"><a href="http://hitao.top/category_442.html"><i class="iconfont icon-yunfu"></i>孕产妇</a></li>
+      <li class="tab6"><a href="http://hitao.top/category_139.html"><i class="iconfont icon-baojianpin"></i>营养保健</a></li>
+      <li class="tab7"><a href="http://hitao.top/category_658.html"><i class="iconfont icon-helanzhiyou"></i>荷兰直邮</a></li>
+      </ul>
+      <div class="menur right">
+        <ul class="rone">
+        	<li style="top: 0px; left: 0px;">
+            	<h3><a href="http://hitao.top/category_135.html">洁面</a></h3>
+                <div class="sift_a" id="siftA00">
+                	<a href="http://hitao.top/category_140.html">洁面膏/霜</a>
+                    <a href="http://hitao.top/category_141.html">洁肤皂</a>
+                    <a href="http://hitao.top/category_145.html">洁面摩丝/泡沫</a>
+                    <a href="http://hitao.top/category_148.html">洁面啫喱/胶 </a>
+                    <a href="http://hitao.top/category_149.html">洁面乳</a>
+                    <a href="http://hitao.top/category_171.html">面部去角质</a>
+                </div>
+             </li>
+             <li style="top: 0px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_266.html">爽肤水/化妆水</a></h3>
+                <div class="sift_a" id="siftA01">
+                	<a href="http://hitao.top/category_269.html">爽肤水</a>
+                    <a href="http://hitao.top/category_273.html">美容液</a>
+                    <a href="http://hitao.top/category_276.html">喷雾</a>
+              	</div>
+             </li>
+             <li style="top: 67px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_357.html">乳液/面霜</a></h3>
+                <div class="sift_a" id="siftA02">
+                	<a href="http://hitao.top/category_361.html">乳液</a>
+                	<a href="http://hitao.top/category_362.html">面霜</a>
+                    <a href="http://hitao.top/category_363.html">日霜</a>
+                    <a href="http://hitao.top/category_364.html">晚霜</a>
+                    <a href="http://hitao.top/category_366.html">凝露/凝胶/啫喱</a>
+                    <a href="http://hitao.top/category_424.html">防晒/修护</a>
+                 </div>
+             </li>
+             <li style="top: 95px; left: 0px;">
+              	<h3><a href="http://hitao.top/category_291.html">面膜</a></h3>
+              	<div class="sift_a" id="siftA03">
+              		<a href="http://hitao.top/category_293.html">面膜贴</a>
+                	<a href="http://hitao.top/category_300.html">免洗面膜</a>
+                	<a href="http://hitao.top/category_337.html">水洗面膜</a>
+              	</div>
+            </li>
+            <li style="top: 162px; left: 0px;">
+             	<h3><a href="http://hitao.top/category_358.html">眼部/T区/唇部护理</a></h3>
+            	 <div class="sift_a" id="siftA04">
+                    <a href="http://hitao.top/category_569.html">眼罩</a>
+                    <a href="http://hitao.top/category_367.html">眼霜</a>
+                    <a href="http://hitao.top/category_368.html">眼部精华</a>
+                    <a href="http://hitao.top/category_369.html">眼膜</a>
+                    <a href="http://hitao.top/category_372.html">鼻膜</a>
+                    <a href="http://hitao.top/category_373.html">护唇膏</a>
+                    <a href="http://hitao.top/category_375.html">唇膜</a>
+                </div>
+			</li>
+            <li style="top: 162px; left: 270px;">
+            	<h3><a href="http://hitao.top/category_352.html">精华</a></h3>
+                <div class="sift_a" id="siftA05">
+                	<a href="http://hitao.top/category_353.html">精华液/露</a>
+                    <a href="http://hitao.top/category_354.html">精华乳/霜</a>
+                    <a href="http://hitao.top/category_355.html">原液</a>
+                </div>
+             </li>
+             <li style="top: 229px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_309.html">男士护肤</a></h3>
+                <div class="sift_a" id="siftA06">
+                <a href="http://hitao.top/category_311.html">洁面</a>
+                <a href="http://hitao.top/category_313.html">乳液/面霜</a>
+                <a href="http://hitao.top/category_314.html">爽肤水</a>
+                <a href="http://hitao.top/category_381.html">精华</a>
+                <a href="http://hitao.top/category_382.html">面膜</a>
+           	</div>
+           	</li>
+            <li style="top: 257px; left: 0px;">
+            	<h3><a href="http://hitao.top/category_356.html">护肤套装</a></h3>
+           	 	<div class="sift_a" id="siftA07">
+            	<a href="http://hitao.top/category_359.html">护肤套装</a>
+                <a href="http://hitao.top/category_360.html">套装小样</a>
+                </div>
+            </li>
+	</ul>
+            <ul class="rone">
+        	<li style="top: 0px; left: 0px;">
+            	<h3><a href="http://hitao.top/category_135.html">个人护理</a></h3>
+                <div class="sift_a" id="siftA00">
+                	<a href="http://hitao.top/category_140.html">洁面膏/霜</a>
+                    <a href="http://hitao.top/category_141.html">洁肤皂</a>
+                    <a href="http://hitao.top/category_145.html">洁面摩丝/泡沫</a>
+                    <a href="http://hitao.top/category_148.html">洁面啫喱/胶 </a>
+                    <a href="http://hitao.top/category_149.html">洁面乳</a>
+                    <a href="http://hitao.top/category_171.html">面部去角质</a>
+                </div>
+             </li>
+             <li style="top: 0px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_266.html">个人护理</a></h3>
+                <div class="sift_a" id="siftA01">
+                	<a href="http://hitao.top/category_269.html">爽肤水</a>
+                    <a href="http://hitao.top/category_273.html">美容液</a>
+                    <a href="http://hitao.top/category_276.html">喷雾</a>
+              	</div>
+             </li>
+             <li style="top: 67px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_357.html">个人护理</a></h3>
+                <div class="sift_a" id="siftA02">
+                	<a href="http://hitao.top/category_361.html">乳液</a>
+                	<a href="http://hitao.top/category_362.html">面霜</a>
+                    <a href="http://hitao.top/category_363.html">日霜</a>
+                    <a href="http://hitao.top/category_364.html">晚霜</a>
+                    <a href="http://hitao.top/category_366.html">凝露/凝胶/啫喱</a>
+                    <a href="http://hitao.top/category_424.html">防晒/修护</a>
+                 </div>
+             </li>
+	</ul>
+                <ul class="rone">
+        	<li style="top: 0px; left: 0px;">
+            	<h3><a href="http://hitao.top/category_135.html">时尚妆彩</a></h3>
+                <div class="sift_a" id="siftA00">
+                	<a href="http://hitao.top/category_140.html">洁面膏/霜</a>
+                    <a href="http://hitao.top/category_141.html">洁肤皂</a>
+                    <a href="http://hitao.top/category_145.html">洁面摩丝/泡沫</a>
+                    <a href="http://hitao.top/category_148.html">洁面啫喱/胶 </a>
+                    <a href="http://hitao.top/category_149.html">洁面乳</a>
+                    <a href="http://hitao.top/category_171.html">面部去角质</a>
+                </div>
+             </li>
+             <li style="top: 0px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_266.html">时尚妆彩</a></h3>
+                <div class="sift_a" id="siftA01">
+                	<a href="http://hitao.top/category_269.html">爽肤水</a>
+                    <a href="http://hitao.top/category_273.html">美容液</a>
+                    <a href="http://hitao.top/category_276.html">喷雾</a>
+              	</div>
+             </li>
+             <li style="top: 67px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_357.html">时尚妆彩</a></h3>
+                <div class="sift_a" id="siftA02">
+                	<a href="http://hitao.top/category_361.html">乳液</a>
+                	<a href="http://hitao.top/category_362.html">面霜</a>
+                    <a href="http://hitao.top/category_363.html">日霜</a>
+                    <a href="http://hitao.top/category_364.html">晚霜</a>
+                    <a href="http://hitao.top/category_366.html">凝露/凝胶/啫喱</a>
+                    <a href="http://hitao.top/category_424.html">防晒/修护</a>
+                 </div>
+             </li>
+             <li style="top: 95px; left: 0px;">
+              	<h3><a href="http://hitao.top/category_291.html">时尚妆彩</a></h3>
+              	<div class="sift_a" id="siftA03">
+              		<a href="http://hitao.top/category_293.html">面膜贴</a>
+                	<a href="http://hitao.top/category_300.html">免洗面膜</a>
+                	<a href="http://hitao.top/category_337.html">水洗面膜</a>
+              	</div>
+            </li>
+            <li style="top: 162px; left: 0px;">
+             	<h3><a href="http://hitao.top/category_358.html">时尚妆彩</a></h3>
+            	 <div class="sift_a" id="siftA04">
+                    <a href="http://hitao.top/category_569.html">眼罩</a>
+                    <a href="http://hitao.top/category_367.html">眼霜</a>
+                    <a href="http://hitao.top/category_368.html">眼部精华</a>
+                    <a href="http://hitao.top/category_369.html">眼膜</a>
+                    <a href="http://hitao.top/category_372.html">鼻膜</a>
+                    <a href="http://hitao.top/category_373.html">护唇膏</a>
+                    <a href="http://hitao.top/category_375.html">唇膜</a>
+                </div>
+			</li>
+	</ul>
+    <ul class="rone">
+        	<li style="top: 0px; left: 0px;">
+            	<h3><a href="http://hitao.top/category_135.html">精油</a></h3>
+                <div class="sift_a" id="siftA00">
+                	<a href="http://hitao.top/category_140.html">洁面膏/霜</a>
+                    <a href="http://hitao.top/category_141.html">洁肤皂</a>
+                    <a href="http://hitao.top/category_145.html">洁面摩丝/泡沫</a>
+                    <a href="http://hitao.top/category_148.html">洁面啫喱/胶 </a>
+                    <a href="http://hitao.top/category_149.html">洁面乳</a>
+                    <a href="http://hitao.top/category_171.html">面部去角质</a>
+                </div>
+             </li>
+             <li style="top: 0px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_266.html">精油</a></h3>
+                <div class="sift_a" id="siftA01">
+                	<a href="http://hitao.top/category_269.html">爽肤水</a>
+                    <a href="http://hitao.top/category_273.html">美容液</a>
+                    <a href="http://hitao.top/category_276.html">喷雾</a>
+              	</div>
+             </li>
+             <li style="top: 67px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_357.html">精油</a></h3>
+                <div class="sift_a" id="siftA02">
+                	<a href="http://hitao.top/category_361.html">乳液</a>
+                	<a href="http://hitao.top/category_362.html">面霜</a>
+                    <a href="http://hitao.top/category_363.html">日霜</a>
+                    <a href="http://hitao.top/category_364.html">晚霜</a>
+                    <a href="http://hitao.top/category_366.html">凝露/凝胶/啫喱</a>
+                    <a href="http://hitao.top/category_424.html">防晒/修护</a>
+                 </div>
+             </li>
+             <li style="top: 95px; left: 0px;">
+              	<h3><a href="http://hitao.top/category_291.html">精油</a></h3>
+              	<div class="sift_a" id="siftA03">
+              		<a href="http://hitao.top/category_293.html">面膜贴</a>
+                	<a href="http://hitao.top/category_300.html">免洗面膜</a>
+                	<a href="http://hitao.top/category_337.html">水洗面膜</a>
+              	</div>
+            </li>
+	</ul>
+                <ul class="rone">
+        	<li style="top: 0px; left: 0px;">
+            	<h3><a href="http://hitao.top/category_135.html">婴幼儿</a></h3>
+                <div class="sift_a" id="siftA00">
+                	<a href="http://hitao.top/category_140.html">洁面膏/霜</a>
+                    <a href="http://hitao.top/category_141.html">洁肤皂</a>
+                    <a href="http://hitao.top/category_145.html">洁面摩丝/泡沫</a>
+                    <a href="http://hitao.top/category_148.html">洁面啫喱/胶 </a>
+                    <a href="http://hitao.top/category_149.html">洁面乳</a>
+                    <a href="http://hitao.top/category_171.html">面部去角质</a>
+                </div>
+             </li>
+             <li style="top: 0px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_266.html">婴幼儿</a></h3>
+                <div class="sift_a" id="siftA01">
+                	<a href="http://hitao.top/category_269.html">爽肤水</a>
+                    <a href="http://hitao.top/category_273.html">美容液</a>
+                    <a href="http://hitao.top/category_276.html">喷雾</a>
+              	</div>
+             </li>
+             <li style="top: 67px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_357.html">婴幼儿</a></h3>
+                <div class="sift_a" id="siftA02">
+                	<a href="http://hitao.top/category_361.html">乳液</a>
+                	<a href="http://hitao.top/category_362.html">面霜</a>
+                    <a href="http://hitao.top/category_363.html">日霜</a>
+                    <a href="http://hitao.top/category_364.html">晚霜</a>
+                    <a href="http://hitao.top/category_366.html">凝露/凝胶/啫喱</a>
+                    <a href="http://hitao.top/category_424.html">防晒/修护</a>
+                 </div>
+             </li>
+             <li style="top: 95px; left: 0px;">
+              	<h3><a href="http://hitao.top/category_291.html">婴幼儿</a></h3>
+              	<div class="sift_a" id="siftA03">
+              		<a href="http://hitao.top/category_293.html">面膜贴</a>
+                	<a href="http://hitao.top/category_300.html">免洗面膜</a>
+                	<a href="http://hitao.top/category_337.html">水洗面膜</a>
+              	</div>
+            </li>
+	</ul>
+                <ul class="rone">
+        	<li style="top: 0px; left: 0px;">
+            	<h3><a href="http://hitao.top/category_135.html">孕产妇</a></h3>
+                <div class="sift_a" id="siftA00">
+                	<a href="http://hitao.top/category_140.html">洁面膏/霜</a>
+                    <a href="http://hitao.top/category_141.html">洁肤皂</a>
+                    <a href="http://hitao.top/category_145.html">洁面摩丝/泡沫</a>
+                    <a href="http://hitao.top/category_148.html">洁面啫喱/胶 </a>
+                    <a href="http://hitao.top/category_149.html">洁面乳</a>
+                    <a href="http://hitao.top/category_171.html">面部去角质</a>
+                </div>
+             </li>
+             <li style="top: 0px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_266.html">孕产妇</a></h3>
+                <div class="sift_a" id="siftA01">
+                	<a href="http://hitao.top/category_269.html">爽肤水</a>
+                    <a href="http://hitao.top/category_273.html">美容液</a>
+                    <a href="http://hitao.top/category_276.html">喷雾</a>
+              	</div>
+             </li>
+             <li style="top: 67px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_357.html">孕产妇</a></h3>
+                <div class="sift_a" id="siftA02">
+                	<a href="http://hitao.top/category_361.html">乳液</a>
+                	<a href="http://hitao.top/category_362.html">面霜</a>
+                    <a href="http://hitao.top/category_363.html">日霜</a>
+                    <a href="http://hitao.top/category_364.html">晚霜</a>
+                    <a href="http://hitao.top/category_366.html">凝露/凝胶/啫喱</a>
+                    <a href="http://hitao.top/category_424.html">防晒/修护</a>
+                 </div>
+             </li>
+             <li style="top: 95px; left: 0px;">
+              	<h3><a href="http://hitao.top/category_291.html">孕产妇</a></h3>
+              	<div class="sift_a" id="siftA03">
+              		<a href="http://hitao.top/category_293.html">面膜贴</a>
+                	<a href="http://hitao.top/category_300.html">免洗面膜</a>
+                	<a href="http://hitao.top/category_337.html">水洗面膜</a>
+              	</div>
+            </li>
+            <li style="top: 162px; left: 0px;">
+             	<h3><a href="http://hitao.top/category_358.html">孕产妇</a></h3>
+            	 <div class="sift_a" id="siftA04">
+                    <a href="http://hitao.top/category_569.html">眼罩</a>
+                    <a href="http://hitao.top/category_367.html">眼霜</a>
+                    <a href="http://hitao.top/category_368.html">眼部精华</a>
+                    <a href="http://hitao.top/category_369.html">眼膜</a>
+                    <a href="http://hitao.top/category_372.html">鼻膜</a>
+                    <a href="http://hitao.top/category_373.html">护唇膏</a>
+                    <a href="http://hitao.top/category_375.html">唇膜</a>
+                </div>
+			</li>
+            <li style="top: 162px; left: 270px;">
+            	<h3><a href="http://hitao.top/category_352.html">孕产妇</a></h3>
+                <div class="sift_a" id="siftA05">
+                	<a href="http://hitao.top/category_353.html">精华液/露</a>
+                    <a href="http://hitao.top/category_354.html">精华乳/霜</a>
+                    <a href="http://hitao.top/category_355.html">原液</a>
+                </div>
+             </li>
+	</ul>
+                <ul class="rone">
+        	<li style="top: 0px; left: 0px;">
+            	<h3><a href="http://hitao.top/category_135.html">营养保健</a></h3>
+                <div class="sift_a" id="siftA00">
+                	<a href="http://hitao.top/category_140.html">洁面膏/霜</a>
+                    <a href="http://hitao.top/category_141.html">洁肤皂</a>
+                    <a href="http://hitao.top/category_145.html">洁面摩丝/泡沫</a>
+                    <a href="http://hitao.top/category_148.html">洁面啫喱/胶 </a>
+                    <a href="http://hitao.top/category_149.html">洁面乳</a>
+                    <a href="http://hitao.top/category_171.html">面部去角质</a>
+                </div>
+             </li>
+             <li style="top: 0px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_266.html">营养保健</a></h3>
+                <div class="sift_a" id="siftA01">
+                	<a href="http://hitao.top/category_269.html">爽肤水</a>
+                    <a href="http://hitao.top/category_273.html">美容液</a>
+                    <a href="http://hitao.top/category_276.html">喷雾</a>
+              	</div>
+             </li>
+             <li style="top: 67px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_357.html">营养保健</a></h3>
+                <div class="sift_a" id="siftA02">
+                	<a href="http://hitao.top/category_361.html">乳液</a>
+                	<a href="http://hitao.top/category_362.html">面霜</a>
+                    <a href="http://hitao.top/category_363.html">日霜</a>
+                    <a href="http://hitao.top/category_364.html">晚霜</a>
+                    <a href="http://hitao.top/category_366.html">凝露/凝胶/啫喱</a>
+                    <a href="http://hitao.top/category_424.html">防晒/修护</a>
+                 </div>
+             </li>
+             <li style="top: 95px; left: 0px;">
+              	<h3><a href="http://hitao.top/category_291.html">营养保健</a></h3>
+              	<div class="sift_a" id="siftA03">
+              		<a href="http://hitao.top/category_293.html">面膜贴</a>
+                	<a href="http://hitao.top/category_300.html">免洗面膜</a>
+                	<a href="http://hitao.top/category_337.html">水洗面膜</a>
+              	</div>
+            </li>
+	</ul>
+                <ul class="rone">
+        	<li style="top: 0px; left: 0px;">
+            	<h3><a href="http://hitao.top/category_135.html">荷兰直邮</a></h3>
+                <div class="sift_a" id="siftA00">
+                	<a href="http://hitao.top/category_140.html">洁面膏/霜</a>
+                    <a href="http://hitao.top/category_141.html">洁肤皂</a>
+                    <a href="http://hitao.top/category_145.html">洁面摩丝/泡沫</a>
+                    <a href="http://hitao.top/category_148.html">洁面啫喱/胶 </a>
+                    <a href="http://hitao.top/category_149.html">洁面乳</a>
+                    <a href="http://hitao.top/category_171.html">面部去角质</a>
+                </div>
+             </li>
+             <li style="top: 0px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_266.html">荷兰直邮</a></h3>
+                <div class="sift_a" id="siftA01">
+                	<a href="http://hitao.top/category_269.html">爽肤水</a>
+                    <a href="http://hitao.top/category_273.html">美容液</a>
+                    <a href="http://hitao.top/category_276.html">喷雾</a>
+              	</div>
+             </li>
+             <li style="top: 67px; left: 270px;">
+             	<h3><a href="http://hitao.top/category_357.html">荷兰直邮</a></h3>
+                <div class="sift_a" id="siftA02">
+                	<a href="http://hitao.top/category_361.html">乳液</a>
+                	<a href="http://hitao.top/category_362.html">面霜</a>
+                    <a href="http://hitao.top/category_363.html">日霜</a>
+                    <a href="http://hitao.top/category_364.html">晚霜</a>
+                    <a href="http://hitao.top/category_366.html">凝露/凝胶/啫喱</a>
+                    <a href="http://hitao.top/category_424.html">防晒/修护</a>
+                 </div>
+             </li>
+             <li style="top: 95px; left: 0px;">
+              	<h3><a href="http://hitao.top/category_291.html">面膜</a></h3>
+              	<div class="sift_a" id="siftA03">
+              		<a href="http://hitao.top/category_293.html">面膜贴</a>
+                	<a href="http://hitao.top/category_300.html">免洗面膜</a>
+                	<a href="http://hitao.top/category_337.html">水洗面膜</a>
+              	</div>
+            </li>
+            <li style="top: 162px; left: 0px;">
+             	<h3><a href="http://hitao.top/category_358.html">眼部/T区/唇部护理</a></h3>
+            	 <div class="sift_a" id="siftA04">
+                    <a href="http://hitao.top/category_569.html">眼罩</a>
+                    <a href="http://hitao.top/category_367.html">眼霜</a>
+                    <a href="http://hitao.top/category_368.html">眼部精华</a>
+                    <a href="http://hitao.top/category_369.html">眼膜</a>
+                    <a href="http://hitao.top/category_372.html">鼻膜</a>
+                    <a href="http://hitao.top/category_373.html">护唇膏</a>
+                    <a href="http://hitao.top/category_375.html">唇膜</a>
+                </div>
+			</li>
+            <li style="top: 162px; left: 270px;">
+            	<h3><a href="http://hitao.top/category_352.html">精华</a></h3>
+                <div class="sift_a" id="siftA05">
+                	<a href="http://hitao.top/category_353.html">精华液/露</a>
+                    <a href="http://hitao.top/category_354.html">精华乳/霜</a>
+                    <a href="http://hitao.top/category_355.html">原液</a>
+                </div>
+	</ul>
+        </div>
+    </div>
+</div>
+<!--------轮播图-------->
+<div class="focus">
+	<div class="big-wrap">
+	<ul class="fade">
+    	<li><a href="#"><img src="img/TB1TA0NKFXXXXa2XpXXXXXXXXXX-1190-300.jpg"/></a></li>
+        <li><a href="#"><img src="img/TB1p_D9KpXXXXb2XXXXXXXXXXXX-1190-300.jpg"/></a></li>
+        <li><a href="#"><img src="img/TB1x5oWKpXXXXXtapXXXXXXXXXX-1190-300.jpg"/></a></li>
+    </ul>
+    </div>
+</div>
+<!--------mod-------->
+<div class="mod">
+	<ul class="modm">
+      	<li>
+			<a href="http://www.hitao.top/about/pc-ppbz.php?spm=0.0.0.0.lBfUUQ#t1" target="_blank">
+			<span class="iconfont icon-guanfangshouquan"></span>
+			<strong>官方授权</strong>
+			<p>Official authorization</p>
+			</a>
+		</li>
+		<li>
+			<a href="http://www.hitao.top/about/pc-ppbz.php?spm=0.0.0.0.KCNq9I#t2" target="_blank">
+			<span class="iconfont icon-haiguanjianguan"></span>
+			<strong>海关监管</strong>
+			<p class="ico_cssfont">Customs Supervision</p>
+			</a>
+		</li>
+		<li>
+			<a href="http://www.hitao.top/about/pc-ppbz.php?spm=0.0.0.0.KCNq9I#t3" target="_blank">
+			<span class="iconfont icon-mianshuibaoyou"></span>
+			<strong>满额包邮</strong>
+			<p class="ico_cssfont">Quota Fulfillment Mail</p>
+			</a>
+		</li>
+		<li>
+			<a href="http://www.hitao.top/about/pc-ppbz.php?spm=0.0.0.0.lBfUUQ#t4" target="_blank">
+			<span class="iconfont icon-shouhouwuyou"></span>
+			<strong>售后无忧</strong>
+			<p>Assured After-sale Service</p>
+			</a>
+		</li>
+	</ul>
+</div>
+<!--------lay-------->
+<div class="lay">
+  <div class="layin">
+          <a href="http://item.hitao.top/category_447.html" target="_blank">
+          <img src="img/TB1xtqoJFXXXXcXXVXXXXXXXXXX-290-140.png" alt="宝宝辅食" class="h-fill">
+          </a>
+        
+          <a href="http://item.hitao.top/category_291.html" target="_blank">
+          <img src="img/TB1OqKUJFXXXXa3XXXXXXXXXXXX-290-140.png" alt="面膜" class="h-fill">
+          </a>
+        
+          <a href="http://item.hitao.top/category_448.html" target="_blank">
+          <img src="img/TB1hT9uJFXXXXclXFXXXXXXXXXX-290-140.png" alt="纸尿裤" class="h-fill">
+          </a>
+        
+          <a href="http://item.hitao.top/category_126.html" target="_blank">
+          <img src="img/TB1IS00JFXXXXaOXFXXXXXXXXXX-290-140.png" alt="彩妆" class="h-fill">
+          </a>
+  </div>
+</div>
+<!--------contentone-------->
+<div class="contentone">
+  <div class="con-in">
+    <h3 class="con-head">
+    <hr/>
+      <span><img src="img/TB10qO4JFXXXXXKXXXXXXXXXXXX-417-45.png" alt="嗨淘精选"></span>
+    </h3>
+    <div class="con-fot">
+    	<a href="http://alimarket.hitao.com/markets/hitao/g/act/drg2" class="con-left">
+        	<img class="h-hot-adv1" target="_blank" src="img/TB1eFuoJFXXXXXyXFXXXXXXXXXX-330-520.png" alt="DRG">
+      	</a>
+    	<div class="conr right">
+    	 <ul>
+    		<li><a href="http://item.hitao.top/category_484.html" class="h-a h-fill" target="_blank">
+              <img class="h-fill" src="https:/img.alicdn.com/tps/TB1n1HgJVXXXXbvXpXXXXXXXXXX-290-260.jpg" alt="奶瓶">
+            </a></li>
+         	<li>
+         	<a href="http://item.hitao.top/category_386.html" class="h-a h-fill" target="_blank">
+              <img class="h-fill" src="https:/img.alicdn.com/tps/TB1FxJvKFXXXXc1XpXXXXXXXXXX-290-260.jpg" alt="香水">
+            </a>
+         	</li>
+         <li>
+         	<a href="http://korea.hitao.top/news_detail?cid=21&amp;articleid=1645" class="h-a h-fill" target="_blank">
+              <img class="h-fill" src="https:/img.alicdn.com/tps/TB1BYRSKXXXXXcYXpXXXXXXXXXX-290-260.jpg" alt="韩流美视">
+            </a>
+         </li>
+     	</ul>
+     	<ul>
+     		<li>
+        	<a href="http://hitao.top/product_162494.html" class="h-a h-fill" target="_blank">
+              <img class="h-fill" src="https:/img.alicdn.com/tps/TB1KkK.KpXXXXaMXpXXXXXXXXXX-290-260.jpg" alt="丽得姿 针剂水库面膜贴 10片 赠自然乐园芦荟胶">
+            </a>
+        	</li>
+        <li>
+        	<a href="http://hitao.top/product_160153.html" class="h-a h-fill" target="_blank">
+              <img class="h-fill" src="https:/img.alicdn.com/tps/TB1O1BaKFXXXXXvapXXXXXXXXXX-290-260.jpg" alt="兰芝 水清滢防晒乳霜 50ml SPF35/PA++">
+            </a>
+        </li>
+        <li>
+        	<a href="http://baby.hitao.top/news_detail?cid=23&amp;articleid=1159" class="h-a h-fill" target="_blank">
+              <img class="h-fill" src="https:/img.alicdn.com/tps/TB16aXVKXXXXXbxXpXXXXXXXXXX-290-260.jpg" alt="带娃手册">
+            </a>
+        </li>
+     </ul>
+    </div>
+   </div>
+  </div>
+</div>
+<!------contentwo--------->
+<div class="contenttwo">
+  <div class="contwo-in">
+    
+    <h3 class="con-head">
+    <hr/>
+    <span><img src="https:/img.alicdn.com/tps/TB14D1rJFXXXXXSXFXXXXXXXXXX-417-45.png" alt="嗨淘大牌"></span>
+    
+    </h3>
+    
+    <div class="contwo-fot">
+      <div class="contwol left ophover">
+        <a class="h-a h-fill" href="http://alimarket.hitao.com/markets/hitao/g/act/leaders">
+      		<img class="h-fill" src="https:/img.alicdn.com/tps/TB1SfkOJFXXXXcrXVXXXXXXXXXX-300-410.jpg" alt="丽得姿">
+      	</a>
+      </div>
+      <div class="contwor right">
+      <ul>
+      	<li class="lione ophover">
+          <a href="http://item.hitao.top/brand_521.html">
+        		<img src="https:/img.alicdn.com/tps/TB1TGJbKFXXXXaBXFXXXXXXXXXX-420-200.jpg" alt="碧欧泉">
+        	</a>
+      	</li>
+       	<li class="ophover">
+          <a href="http://alimarket.hitao.com/markets/hitao/g/act/pigeon">
+        		<img src="https:/img.alicdn.com/tps/TB1VC8jKFXXXXXfXpXXXXXXXXXX-420-200.jpg" alt="贝亲">
+        	</a>
+        </li>
+       </ul>
+       <ul>
+        <li class="lione ophover">
+          <a href="http://alimarket.hitao.com/markets/hitao/g/act/thesaem">
+        		<img src="https:/img.alicdn.com/tps/TB1X38AKpXXXXXwapXXXXXXXXXX-420-200.jpg" alt="得鲜品牌">
+        	</a>
+        </li>
+        <li class="ophover">
+          <a href="http://alimarket.hitao.com/markets/hitao/g/act/moony">
+        		<img src="https:/img.alicdn.com/tps/TB1td7cKXXXXXaoXXXXXXXXXXXX-420-200.jpg" alt="尤妮佳">
+        	</a>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!------main--------->
+<div id="main">
+	<div class="mainin">
+    	<div class="mainl left">
+        	<div class="mainl-top">
+            	<img class="left" src="img/TB1po2bLFXXXXXNXXXXwu0bFXXX.png" alt="全球特卖">
+                <a href="http://global.hitao.top/">查看更多&nbsp;&gt;</a>
+            </div>
+            <ul class="mainlscroll">
+            	<li class="mainli">
+            		<div class="scimg" style="margin: 0;position: relative;">
+                		<i class="scover">抢光了</i>
+                  		<a href="html/shoplist.html" target="_blank">
+                  			<img src="img/071082d60.jpeg@_80q" data-original="img/071082d60.jpeg@_80q" alt="Clio/珂莱欧 自然持久魅黑杀手眼线笔 0.55g+卸妆油 20ml"/>
+          				</a>
+            		</div>
+
+            		<div class="sctext right">
+              			<div class="sctext-title">
+                			<div class="sctime right">距结束<input type="text" class="time_d">天<input type="text" class="time_h">时<input type="text" class="time_m">分<input type="text" class="time_s">秒
+                        	</div>
+                			<img src="img/21_100x100.png">
+                			<span class="scspan" title="Clio/珂莱欧 自然持久魅黑杀手眼线笔 0.55g+卸妆油 20ml">韩国直采杭州保税仓发货</span>
+              			</div>
+              			<p class="sctext-p-one"><a href="//item.hitao.top/product_160192.html" style="color: inherit">Clio/珂莱欧 自然持久魅黑杀手眼线笔 0.55g+卸妆油 20ml</a></p>
+              			<p class="sctext-p-two">笔中神器，挑战极“线”！全天候防水不脱妆，让你彻底告别“熊猫”眼妆，体验CLIO带来的超强持久力，从早到晚持续保持妆容的清晰亮丽！加赠卸妆油，美丽更贴心。</p>
+              		<div class="scnum">
+                		<a href="html/shoplist.html" class="scnumbtn" target="_blank">立即抢购</a>
+                	<div class="scnumprice">￥<span class="scnumprice1">89.00</span><span class="scnumprice2">￥145.00</span></div>
+              		</div>
+            	  </div>
+                </li>
+            </ul>
+        </div>
+        <div class="mainr right">
+        	<div class="mainrtop">
+                <div class="rtext">会员活动专区</div>
+            </div>
+            <a href="http://hitao.top/product_160885.html" class="vip">
+                    <img src="img/TB1zdkRJFXXXXX5XpXXXXXXXXXX-1080-490.jpg" alt="beauty box">
+            </a>
+			<div class="mainrtop">
+                <div class="rtext">热销品牌</div>
+            </div>
+			<div class="mainrbox">
+            	<a href="http://alimarket.hitao.com/markets/hitao/g/act/innisfree">
+            		<img  src="img/TB1rQz8LFXXXXa4XpXXNx3t4VXX-120-120.jpg" data-original="img/TB1rQz8LFXXXXa4XpXXNx3t4VXX-120-120.jpg" alt="innisfree/悦诗风吟"/>
+            <div class="rboxtext" data-max="20">innisfree/悦诗风吟</div>
+          		</a>
+                <a href="http://item.hitao.top/brand_587.html">
+            		<img  src="img/TB19DJvLVXXXXb7XFXXNx3t4VXX-120-120.jpg" data-original="img/TB19DJvLVXXXXb7XFXXNx3t4VXX-120-120.jpg" alt="Banobagi/巴诺巴奇"/>
+                <div class="rboxtext" data-max="20">Banobagi/巴诺巴奇</div>
+              </a>
+              <a href="http://item.hitao.top/brand_385.html">
+                <img  src="img/TB1.rIaLFXXXXasXpXXNx3t4VXX-120-120.jpg" data-original="img/TB1.rIaLFXXXXasXpXXNx3t4VXX-120-120.jpg" alt="SNP"/>
+                <div class="rboxtext" data-max="20">SNP</div>
+              </a>
+              <a href="http://item.hitao.top/brand_437.html">
+                <img  src="img/TB1aOZXLFXXXXb6XpXXNx3t4VXX-120-120.jpg" data-original="img/TB1aOZXLFXXXXb6XpXXNx3t4VXX-120-120.jpg" alt="Lancome/兰蔻"/>
+                <div class="rboxtext" data-max="20">Lancome/兰蔻</div>
+              </a>
+              <a href="http://item.hitao.top/brand_549.html">
+                <img  src="img/TB1Z4hVMXXXXXbpXXXXNx3t4VXX-120-120.jpg" data-original="img/TB1Z4hVMXXXXXbpXXXXNx3t4VXX-120-120.jpg" alt="Origins/悦木之源"/>
+                <div class="rboxtext" data-max="20">Origins/悦木之源</div>
+              </a>
+              <a href="http://item.hitao.top/brand_438.html">
+                <img  src="img/TB1bk7KMXXXXXatXVXXNx3t4VXX-120-120.jpg" data-original="img/TB1bk7KMXXXXXatXVXXNx3t4VXX-120-120.jpg" alt="Avene/雅漾"/>
+                <div class="rboxtext" data-max="20">Avene/雅漾</div>
+              </a>
+              <a href="http://alimarket.hitao.com/markets/hitao/g/act/gerber">
+                <img  src="img/TB10aEXLFXXXXccXpXXNx3t4VXX-120-120.jpg" data-original="img/TB10aEXLFXXXXccXpXXNx3t4VXX-120-120.jpg" alt="Gerber/嘉宝"/>
+                <div class="rboxtext" data-max="20">Gerber/嘉宝</div>
+              </a>
+              <a href="http://item.hitao.top/brand_452.html">
+                <img  src="img/TB1iN.eLFXXXXXXXpXXNx3t4VXX-120-120.jpg" data-original="img/TB1iN.eLFXXXXXXXpXXNx3t4VXX-120-120.jpg" alt="Aveeno/艾维诺"/>
+                <div class="rboxtext" data-max="20">Aveeno/艾维诺</div>
+              </a>
+              <a href="http://alimarket.hitao.com/markets/hitao/g/act/moony">
+                <img  src="img/TB1zlUhLFXXXXcnXXXXNx3t4VXX-120-120.jpg" data-original="img/TB1zlUhLFXXXXcnXXXXNx3t4VXX-120-120.jpg" alt="Moony/尤妮佳"/>
+                <div class="rboxtext" data-max="20">Moony/尤妮佳</div>
+              </a>
+              <a href="http://alimarket.hitao.com/markets/hitao/g/act/merries">
+                <img  src="img/TB17vKNLVXXXXciXVXXNx3t4VXX-120-120.jpg" data-original="img/TB17vKNLVXXXXciXVXXNx3t4VXX-120-120.jpg" alt="KAO/花王"/>
+                <div class="rboxtext" data-max="20">KAO/花王</div>
+              </a>
+              <a href="http://item.hitao.top/brand_431.html">
+                <img  src="img/TB1mMPNLVXXXXcNXFXXNx3t4VXX-120-120.jpg" data-original="img/TB1mMPNLVXXXXcNXFXXNx3t4VXX-120-120.jpg" alt="KATE"/>
+                <div class="rboxtext" data-max="20">KATE</div>
+              </a>
+              <a href="http://item.hitao.top/brand_418.html">
+                <img  src="img/TB10ym1LVXXXXbYXpXXNx3t4VXX-120-120.jpg" data-original="img/TB10ym1LVXXXXbYXpXXNx3t4VXX-120-120.jpg" alt="Canmake/井田"/>
+                <div class="rboxtext" data-max="20">Canmake/井田</div>
+              </a>
+        </div>
+        <div class="mainrtop">
+                <div class="rtext">精选专题</div>
+        </div>
+        <a href="http://alimarket.hitao.com/markets/hitao/g/act/mldxcbhf" class="mainsub">
+            <img src="img/TB1iHaLJFXXXXXZXFXXXXXXXXXX-1080-490.jpg" data-original="img/TB1iHaLJFXXXXXZXFXXXXXXXXXX-1080-490.jpg" alt="4.27期"/>
+        </a>
+        <a href="http://www.hitao.top/act/snlmax.php" class="mainsub">
+            <img src="img/TB1BwUGJpXXXXbNXXXXXXXXXXXX-1080-490.jpg" data-original="img/TB1BwUGJpXXXXbNXXXXXXXXXXXX-1080-490.jpg" alt="3.30期">
+		</a>
+        <a href="http://alimarket.hitao.com/markets/hitao/g/act/mldxcbhf" class="mainsub">
+            <img src="img/TB1aQkCJXXXXXawXpXXXXXXXXXX-1080-490.jpg" data-original="img/TB1aQkCJXXXXXawXpXXXXXXXXXX-1080-490.jpg" alt="4.27期"/>
+        </a>
+        </div>
+    </div>
+</div>
+<!--------底部-------->
+<div id="footer">
+	<div class="footertop">
+    	<dl><dt>新手指南</dt><dd><a href="http://help.hitao.top/help-shopping.php#shop01" target="_blank">购物流程</a></dd><dd><a href="http://help.hitao.top/help-shopping.php#shop02" target="_blank">购物需知</a></dd><dd><a href="http://help.hitao.top/help-shopping.php#shop03" target="_blank">联系客服</a></dd><dd><a href="http://help.hitao.top/help-shopping.php#shop04" target="_blank">常见问题</a></dd></dl>
+        <dl><dt>支付方式</dt><dd><a href="http://help.hitao.top/help-pay.php#pay01" target="_blank">第三方平台支付</a></dd><dd><a href="http://help.hitao.top/help-pay.php#pay02" target="_blank">优惠券使用</a></dd></dl>
+        <dl><dt>售后服务</dt><dd><a href="http://help.hitao.top/help-service.php#sale01" target="_blank">退货政策</a></dd><dd><a href="http://help.hitao.top/help-service.php#sale02" target="_blank">退货流程</a></dd><dd><a href="http://help.hitao.top/help-service.php#sale03" target="_blank">退款说明</a></dd></dl>
+        <dl><dt>商品配送</dt><dd><a href="http://help.hitao.top/help-send.php#send01" target="_blank">运费说明</a></dd><dd><a href="http://help.hitao.top/help-send.php#send02" target="_blank">配送范围</a></dd><dd><a href="http://help.hitao.top/help-send.php#send03" target="_blank">发货说明</a></dd><dd><a href="http://help.hitao.top/help-send.php#send04" target="_blank">物流查询</a></dd></dl>
+        <dl><dt>品牌保证</dt><dd><a href="http://www.hitao.top/about/pc-ppbz.php#t1" target="_blank">官方授权</a></dd><dd><a href="http://www.hitao.top/about/pc-ppbz.php#t2" target="_blank">海关监管</a></dd><dd><a href="http://www.hitao.top/about/pc-ppbz.php#t3" target="_blank">免税包邮</a></dd><dd><a href="http://www.hitao.top/about/pc-ppbz.php#t4" target="_blank">售后无忧</a></dd></dl><dl class="last"><dt>手机嗨淘全球</dt><dd><img src="img/TB1_CGGJXXXXXbYXFXXW4780FXX-110-110.png"width="110" height="110" alt="二维码"></dd></dl>
+    </div>
+    <div class="footcenter">
+    	<div class="footin">
+        	<div class="footnav right">
+            	<a href="http://www.hitao.top/about/jianjie.php" target="_blank">公司简介</a> 
+                <a href="http://www.hitao.top/about/contactus.php" target="_blank">联系我们</a> 
+                <a href="http://www.hitao.top/about/memorabilia.php" target="_blank">大事记</a>
+                <a href="http://www.hitao.top/about/civilization.php" target="_blank">人才招募</a> 
+                <a href="http://help.hitao.top/" target="_blank">帮助中心</a> 
+                <a href="http://www.hitao.top/about/legal.php" target="_blank">法律声明</a> 
+                <a href="http://www.hitao.top/about/cooperation.php" target="_blank">合作专区</a> 
+                <a href="http://www.hitao.top/about/links.php" target="_blank">友情链接</a>
+             </div>
+             <div class="footcall left">4008-006-006</div>
+           </div>
+    </div>
+    <p class="copyright">Copyright © 2010 - 2016, 版权所有 HITAO.TOP&nbsp;&nbsp;&nbsp;&nbsp;湘ICP备10012668号-3&nbsp;&nbsp;嗨淘全球网　|　<a href="http:img/T1nQ43FrNkXXX92q3v-1286-900.jpg">营业执照</a>
+    </p>
+    <div class="footbtm">
+    <a href="https://credit.szfw.org/CX20130319002311002367.html" target="_blank"><img src="img/TB16_arJXXXXXXYapXXV6VT9VXX-100-34.png"alt="诚信网站"></a>
+    <a href="http://www.itrust.org.cn/Home/Index/itrust_certifi?wm=1550727538" target="_blank"><img src="img/TB14QCqJXXXXXa0apXXHg7L_XXX-105-34.png"alt="中国互联网诚信企业"></a>
+    <a href="http://www.hngswj.gov.cn/ei/Ei!certificate.action?spm=0.0.0.0.w7qhhl&amp;id=2c99021446038f4401461c946846001a" target="_blank"><img src="img/TB1ZsqNJXXXXXaOXpXXBpxWJpXX-85-34.png"alt="工商网监"></a>
+    <a href="#"><img src="img/TB14YyOJXXXXXbcXpXXeU21.pXX-125-34.png"alt="国家商务部电子商务示范企业"></a>
+    <a href=""><img src="img/TB14QCqJXXXXXa0apXXHg7L_XXX-105-34.png"alt="诚信网站"></a>
+    </div>
+</div>
+<!--------边栏导航-------->
+<div id="user">
+	<ul>
+    	<li class="ser">
+        	<a href="javascript:;" title="在线客服" class="serone">在线客服</a>
+        	<div class="serhover">
+            	<div class="serimg"><a href="#">在线客服</a></div>
+            	<span class="livetime">
+        		时间：9:00-24:00<br>
+                热线：4008-006-006
+        		</span>
+                <div class="trig"></div>
+            </div>
+        </li>
+        <li>
+        	<a href="html/shopcar.html" target="_blank" class="shop"></a>
+            <span class="shopnum">0</span>
+        </li>
+        <li>
+        	<a href="http://hitao.top/mycenter/praisedList" target="_blank" title="我的收藏" class="collect">
+        		<span class="colhover">我的收藏</span>
+      		</a>
+        </li>
+        <li>
+        	<a href="http://hitao.top/mycenter/praisedList" target="_blank" title="我的优惠券" class="fav">
+        		<span class="favhover">我的优惠券</span>
+      		</a>
+        </li>
+        <li>
+        	<a href="javascript:;" title="二维码" class="code" target="_self">
+            	<div class="codehover">
+                	<img src="img/TB1_CGGJXXXXXbYXFXXW4780FXX-110-110.png"/>
+                </div>
+            </a>
+        </li>
+        
+    </ul>
+    <a href="#"title="返回顶部" class="backtop" target="_self">TOP</a>
+
+</div>
+</body>
+</html>
